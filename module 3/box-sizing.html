@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Box-sizing</title>
+    <link rel="stylesheet" href="mystyles.css" />
+    <style></style>
+
+    <style class="editable">
+      .box {
+        border: 5px solid teal;
+        width:400px;
+      }
+
+      .alternate {
+        box-sizing: border-box;
+        width:400px;
+      }
+      body{margin:20px;}
+    </style>
+  </head>
+
+  <body>
+    <h2>Pop-up Exercise: Box Models</h2>
+    <p>In this task, you have two boxes. The first should be sized so that the height will be at least 100 pixels tall, even if there is less content than would cause it to grow to that height, however, the content should not overflow if there is more content than fits in 100 pixels. Test this box by removing the content from the HTML to make sure you still get a 100 pixel tall box even with no content. The second box should be fixed at 100 pixels tall, so that content will overflow if there is too much.</p>
+    <section class="preview">
+        <div class="box">I am using the standard box model.</div>
+        <div class="box alternate">I am using the alternate box model.</div>
+    </section>
+    <textarea class="playable playable-css" style="height: 280px;">
+        .box1 {
+            border: 5px solid teal;
+            width:400px;
+        }
+        
+        .box2 {
+            border: 5px solid teal;
+            width:400px;
+        }
+               
+               
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 80px;">
+<div class="box box1">
+<p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic. Gumbo beet greens corn soko endive gumbo gourd. </p>
+</div>
+<br>
+<div class="box box2">
+<p>Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic. Gumbo beet greens corn soko endive gumbo gourd. </p>
+</div>
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+  </body>
+  <script src="playable.js"></script>
+</html>

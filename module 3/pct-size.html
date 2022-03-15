@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Box-sizing</title>
+    <link rel="stylesheet" href="mystyles.css" />
+    <style></style>
+
+    <style class="editable">
+    .box {
+        border: 5px solid teal;
+        width: 200px;
+    }
+    .minibox {
+        border: 5px solid teal;
+        width: 50px;
+    }
+    .width {
+        width: 100%;
+    }
+    .max {
+        max-width: 100%;
+    }
+
+    </style>
+  </head>
+
+  <body>
+    <h2>Pop-up Exercise: CSS Sizing</h2>
+    <p>Task: In the example below, we have used the same image three times. Explain the difference in size of the image in each block based on the CSS rulesets.</p>
+    <section class="preview">
+            <div class="box"><img src="../images/valo.png" alt="star" class="width"></div>
+            <div class="box"><img src="../images/valo.png" alt="star" class="max"></div>
+            <div class="minibox"><img src="../images/valo.png" alt="star" class="max"></div> 
+    </section>
+    <textarea class="playable playable-css" style="height: 280px;">
+        .box {
+            border: 5px solid teal;
+            margin:5%;
+            width: 200px;
+        }
+        .minibox {
+            border: 5px solid teal;
+            margin:5%;
+            width: 50px;
+
+        }
+        .width {
+            width: 100%;
+        }
+        .max {
+            max-width: 100%;
+        }          
+    </textarea>
+
+    <textarea class="playable playable-html" style="height: 80px;">
+<div class="wrapper">
+    <div class="box" ><img src="../images/valo.png" alt="valo" class="width"></div>
+    <div class="box"><img src="../images/valo.png" alt="valo" class="max"></div>
+    <div class="minibox"><img src="../images/valo.png" alt="valo" class="max"></div>
+</div>        
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>
+
+    <p><b>Note: </b>This technique is used to make images responsive, so that when viewed on a smaller device they scale down appropriately. You should, however, not use this technique to load really large images and then scale them down in the browser. Images should be appropriately sized to be no larger than they need to be for the largest size they are displayed in the design. Downloading overly large images will cause your site to become slow, and it can cost users more money if they are on a metered connection.</p>
+  </body>
+  <script src="playable.js"></script>
+</html>
