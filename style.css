@@ -5,3 +5,4 @@ html {
 
 
 li,a{display:flex; text-decoration: none; }
+p{color:teal; font-size: 15px;} /* Element/Type Selector */

@@ -5,78 +5,126 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="normalize.css" media="screen">
+    <link rel="stylesheet" href="reset.css" media="screen">
     <style>
-
-        *{
-            margin: 0; padding: 0;
-            font-family: "Open Sans";
-        }
-        pre{
-            border: 0px solid red;
-            display: inline;
-            visibility: hidden; 
-        }
-
-        span{border: 1px solid red;}
-
-  
         
+        /*Typography*/
+   
+
+        p {
+            line-height: 1.3rem;
+            text-align: justify;
+            font-style: normal;
+        }
+
+        h1 {
+            font-size: 2rem;
+            line-height: 2rem;
+            margin-top: calc((1.5rem - 2rem) + 1.5rem);
+            margin-bottom: 1.5rem;
+        }
+
+
+        /* Older browsers */
+        html { font-size: 16px; font-family:"Open Sans", Arial, Helvetica, sans-serif; }
+
+        /* Modern browsers only need this one */
+
+        @media screen and (min-width: 25em){
+        html { font-size: calc( 16px + (24 - 16) * (100vw - 400px) / (800 - 400) ); }
+        }
+
+        /* Safari <8 and IE <11 */
+        @media screen and (min-width: 25em){
+        html { font-size: calc( 16px + (24 - 16) * (100vw - 400px) / (800 - 400) ); }
+        }
+        @media screen and (min-width: 50em){
+
+        html { font-size: calc( 16px + (24 - 16) * (50vw - 400px) / (800 - 400) ); }
+        
+        }
+
         .nav{
             background-color: teal; 
-            list-style-type: none;
             text-align: center;
-            margin: 0;
-            padding: 0;
-            position: sticky; top:0; width:100%;
+            position: fixed;top:0;
+            width:100%;
+         
         }
         .nav li{
             display: inline-block;
-            font-size: 20px;
             padding: 20px;
         }
-        .nav li a{text-decoration: none;color:white}
-        .container{
-            padding-top:30px;
-            overflow: hidden;
-            border:0px solid red;
+        .nav li a{
+            text-decoration: none;
+            color:white;
+            font-size: 0.75em;
+        }
+        
+        .page-content{
+            padding-top:80px;
+            padding-bottom:50px;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap:10px;          
         }
 
-        .card-header{padding:1%; text-align: center; font-size: 20px; font-weight: 700;border-bottom: 1px solid teal;}
-        .card-body{padding:5%;}
+        .card-header{
+            text-align: center;
+            font-weight: 700;
+            font-size: 1em;
+            padding-bottom:1.5em;
+        }
+        
+        .card-body{
+            font-size: 0.75em;
+            font-family: Raleway, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
         .card {
-        /* Add shadows to create the "card" effect */
-        border: 3px solid teal;
-        border-radius: 5px;
-        width: 70%;
-    
-        margin:auto;
-        margin-top:3%;
-        /*box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);*/
-        transition: 0.3s;
+            /* Add shadows to create the "card" effect */
+            border: 0px solid teal;
+            border-radius: 5px;
+            width: 70%;
+            margin-top:3%;
+            padding:2%;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
         }
 
         /* On mouse-over, add a deeper shadow */
         .card:hover {
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
         }
+
+        .title{font-weight:500;font-size: 0.9em;line-height:2em;}
+        .item{
+            Background-color: teal;
+            Padding:2em;
+        }
+
     </style>
 </head>
 <body>
-    <ul class="nav">
-        <li><a href="#" onclick="scrollToTop()">About</a></li>
-        <li><a href="#educ">Education</a></li>  
-        <li><a href="#skills" >Skills</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="container">
-        <div class="card" id="about">
+    <header>
+        <ul class="nav">
+            <li><a href="#" onclick="scrollToTop()">About</a></li>
+            <li><a href="#education">Education</a></li>  
+            <li><a href="#skills" >Skills</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>    
+    </header>
+    <div class="page-content">
+        <div class="card" id="about" lang="en">
             <p class="card-header">About</p>
-            <p class="card-body">Hello! tell us about yourself.</p>
+            <p class="title">Hello, I'm Vince! </p>
+            <p class="card-body">Now that we have dealt with the important business  of sizing, setting and distributing our paragraphs compellingly, you may wish to apply a few small enhancements and decorations for the purpose of signposting the document. These nuances concern only certain paragraphs, and choosing which paragraphs to set off is a question of context. With the help of special selectors and combinators, we are able to target specific paragraphs depending on where they appear on the page, making sure that the difference in their design is consistent with their intended role and meaning.</p>
         </div>
-        <div class="card" id="educ">
+        <div class="card" id="education">
             <p class="card-header">Education</p>
-            <p class="card-body">Tell us about your educational background</p>
+            <p class="card-body">Tell us about your education.</p>
         </div>
         <div class="card" id="skills">
             <p class="card-header">Skills</p>
@@ -86,7 +134,23 @@
             <p class="card-header">Portfolio</p>
             <p class="card-body">Please share about your works in the past.</p>
         </div>
+        <div class="card" id="contact">
+            <p class="card-header">Contact</p>
+            <p class="card-body">Please provide character references.</p>
+        </div>
     </div>
+    
+    <div class="page-content">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+            <div class="item">6</div>
+            <div class="item">7</div>
+            <div class="item">8</div>
+            <div class="item">9</div>
+          </div>
     <script>
         function scrollToTop() {
             window.scrollTo(0, 500);

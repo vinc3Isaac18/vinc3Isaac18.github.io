@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style> /*INTERNAL CSS*/
+        *{
+            margin: 0; padding: 0;
+            font-family: "Open Sans";
+        }
+
+        .container{
+            margin: 0; padding: 0;
+            width:100%;
+            border:0;
+        }
+
+        .nav{
+            background-color: teal; 
+            list-style-type: none;
+            text-align: right;
+            margin: 0;
+            padding: 0;
+            position: sticky; top:0; width:100%;
+        }
+        .nav li{
+            display: inline-block;
+            font-size: 20px;
+            padding: 20px;
+        }
+
+        .nav li a{
+            text-decoration: none;
+            color:white;
+        }        
+
+        .card{
+            border:2px solid teal;
+            margin:auto;
+            margin-top: 3%;
+            padding:10px;
+            box-sizing: border-box;
+            width:50%;
+            min-height: 200px;
+
+        }
+
+        #sidebar{
+            border:0px solid teal;
+            width: 15%;
+            float:left;
+            min-height:500px;
+            display: block;
+        }
+
+        #sidebar li{
+            display: flex;
+            padding: 20px;
+            background-color: rgb(231, 225, 225);
+        }
+        #sidebar li a{
+            text-decoration: none;
+            color: black;
+            font-size: 1em;
+        }
+
+        #content{
+            width:84%;
+            border: 0px solid red;
+            float: right;
+        }
+       
+        .collapse-bar{display:none;}
+
+        
+        @media only screen and (max-width: 595px) { 
+            #sidebar{
+                display: none;
+                width:100%;
+                position: absolute;
+                z-index:999;
+            }
+            #content{
+                width:100%;
+            }
+            .collapse{display:none;}
+            .collapse-bar{display: inline-block;}
+            
+        }
+        /* Small screen devices (600px and above) */
+        @media only screen and (min-width: 600px) {
+            #sidebar{
+                display: block;
+                visibility: visible;
+            }
+
+        }
+    </style>
+    
+
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <ul class="collapse">
+                <li><a href="#photos">Settings</a></li>
+                <li><a href="#sites">Logout</a></li>
+            </ul>
+            <ul class="collapse-bar">
+                <li style="font-size:1.5em; color:white">
+                    <a href="#" class="collapsible"><i class="fa fa-bars"></i></a>
+                    
+                </li>
+            </ul>
+        </div>
+        
+        <div id="sidebar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#photos">Photos</a></li>
+                <li><a href="#sites">Visited Sites</a></li>
+            </ul>
+        </div>
+        
+        <div id="content">
+            <div class="card">
+                <p>Hello World!</p> <!--Inline CSS-->
+                <p id="para1">Hello World!</p>
+                <a href="#section">Click Me</a>
+            </div>
+            <div class="card">
+                <p>Hello World!</p> <!--Inline CSS-->
+                <p id="para1">Hello World!</p>
+                <a href="#section">Click Me</a>
+            </div>
+        </div>
+    </div>
+    <script src="../scripts/main.js"></script>
+    <script>
+        
+
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = document.getElementById("sidebar");
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+            content.classList.add("showbar");
+              content.style.display = "block";
+              content.classList.add("showbar");
+            }
+          });
+        }
+
+
+        
+    </script>
+
+</body>
+</html>

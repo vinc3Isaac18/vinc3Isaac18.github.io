@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Box-sizing</title>
+    <link rel="stylesheet" href="../css/normalize.css" media="screen">
+  
+    <link rel="stylesheet" href="./mystyles.css" />
+
+    <style class="editable"></style>
+  </head>
+
+  <body>
+    <h2>Pop-up Exercise: Float and clear</h2>
+    <p>Your task is to you have create the given layout using float and clear properties out of the 4 boxes in the preview.</p>
+    <p><small> Hint: Use width and height properties to stretch the boxes horizontally and vertically.</small></p>
+    <strong>Desired Output:</strong><br> 
+    <img src="../images/flayout.png" alt="float and clear layout">
+
+    <br><br>
+    <strong>Preview:</strong> 
+    <section class="preview"></section>
+    <br>
+    <strong>Edit Code Here.</strong> 
+    <textarea class="playable playable-css" style="height: 280px;">
+        .container{height: 70vh;}
+        .box{
+            padding:25px;
+            text-align: center;
+            color: white;
+            
+        }
+        #box1{
+            background-color: teal;
+
+        }
+        #box2{
+            background-color: rgb(30, 146, 107);
+
+        }
+        #box3{
+            background-color: rgb(115, 202, 173);
+
+        }
+        #box4{
+            background-color: rgb(21, 109, 80);
+
+        }
+               
+    </textarea>
+
+    <textarea class="playable playable-html">
+        <div class="container">
+            <div class="box" id="box1">header</div>   
+            <div class="box" id="box2">sidebar</div>   
+            <div class="box" id="box3">content</div>   
+            <div class="box" id="box4">footer</div> 
+        </div>        
+    </textarea>
+
+    <div class="playable-buttons">
+      <input id="reset" type="button" value="Reset" />
+    </div>       
+  </body>
+  <script src="playable.js"></script>
+</html>

@@ -6,6 +6,13 @@ rgb(95,97,110)
 rgb(137,151,188)
 rgb(160,178,226)
 */
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body { 
     background-color: #fff;
     color: #333;
@@ -39,23 +46,32 @@ body {
   }
 
   .playable-buttons {
-    text-align: right;
-    width: 90%;
-    max-width: 700px;
     padding: 5px 10px 5px 26px;
     font-size: 100%;
+    max-width: 700px;
+    width: 90%;
+    text-align: right;
   }
 
   .preview {
-    width: 90%;
+    width: 100%;
     max-width: 700px;
     border: 1px solid #4D4E53;
     border-radius: 2px;
-    padding: 10px 14px 10px 10px;
-    margin-bottom: 10px;
+    padding: 0;
+    overflow: hidden;
+    clear: both;
   }
 
   .preview input {
     display: block;
     margin: 5px;
+    
+  }
+
+  img{
+    height:25%;
+    width:25%;
+    text-align: center;
+  
   }
